@@ -8,20 +8,20 @@
 </head>
 <body>
   <!-- Sidebar -->
-  <aside class="sidebar">
-    <h2>My Forex</h2>
+  <aside class="sidebar" id="sidebar">
+    <h2 id="siteName">My Forex</h2>
     <nav>
       <a href="#">Dashboard</a>
       <a href="#">Trades</a>
       <a href="#">Analytics</a>
-      <a href="#">About</a>
+      <a href="#" onclick="openSettings()">⚙️ Settings</a>
     </nav>
   </aside>
 
   <!-- Main content -->
   <div class="main-content">
     <header class="header">
-      <h1>Forex Trading Dashboard</h1>
+      <h1 id="dashboardTitle">Forex Trading Dashboard</h1>
     </header>
 
     <section class="card">
@@ -42,7 +42,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Aap yahan apne trade rows add karenge -->
           <tr>
             <td>2025-09-01</td>
             <td>EURUSD</td>
@@ -50,19 +49,28 @@
             <td>0.10</td>
             <td>+50</td>
           </tr>
-          <tr>
-            <td>2025-09-02</td>
-            <td>GBPUSD</td>
-            <td>Sell</td>
-            <td>0.20</td>
-            <td>-30</td>
-          </tr>
         </tbody>
       </table>
     </section>
 
+    <!-- Settings Panel -->
+    <section class="card" id="settingsPanel" style="display:none;">
+      <h2>⚙️ Settings</h2>
+
+      <label>Dashboard Title:</label><br>
+      <input type="text" id="titleInput" placeholder="Enter dashboard name"><br><br>
+
+      <label>Sidebar Color:</label><br>
+      <input type="color" id="sidebarColor" value="#1f2937"><br><br>
+
+      <label>Background Color:</label><br>
+      <input type="color" id="bgColor" value="#f4f4f4"><br><br>
+
+      <button onclick="saveSettings()">💾 Save</button>
+    </section>
+
     <footer class="footer">
-      <p>© 2025 My Forex Dashboard</p>
+      <p id="footerText">© 2025 My Forex Dashboard</p>
     </footer>
   </div>
 
